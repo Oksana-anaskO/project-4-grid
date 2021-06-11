@@ -1,0 +1,121 @@
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    font-weight: 500;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+    background-color: hsl(213, 4%, 90%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper {
+    max-width: 327px;
+    display: grid;
+    grid-gap: 25px 30px;
+    /*align-items: end; уменьшает малозаполненые блоки(*//*как прибить этот текст к низу блока?flex?*/
+}
+.review {
+    box-sizing: border-box;
+    padding:  24px 35px 35px 33px;
+    border-radius: 10px;
+}
+.hat {
+    display: grid;
+    grid-template-columns: 45px auto;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: 20px;
+}
+.review--violet {
+    color: hsl(300, 4%, 98%);
+    background-color: hsl(263, 55%, 52%);
+    background-image: url(images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 85% 1%;
+    order: 1;
+    /*grid-column-start: span 2;*/
+}
+.photo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    grid-row-start: span 2;
+}
+.photo--violet-border {
+    border: 2px solid hsl(264, 52%, 61%);
+}
+.review--tall {
+    color: hsl(227, 23%, 37%);
+    background-color: hsl(0, 0%, 100%);
+    /*grid-row-start: span 2;*/
+    order: 5;
+}
+.review--blackish-blue {
+    color: hsl(212, 6%, 97%);
+    /*grid-column-start: span 2;*/
+    background-color: hsl(219, 29%, 14%);
+    order: 4;
+}
+.review--lightgrey {
+    color: hsl(206, 3%, 97%);
+    background-color: hsl(217, 19%, 35%);
+    order: 2;
+}
+.review--white {
+    order: 3;
+    color: hsl(220, 19%, 35%);
+    background-color: hsl(0, 0%, 100%);
+}
+.main-word {
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 24px;
+}
+.main-word__quotes {
+    opacity: 70%;
+    line-height: 18px;
+    margin-top: 13px;
+}
+.status {
+    opacity: 50%;
+    font-size: 0.69rem;
+}
+@media screen and (min-width: 830px)/* and (max-width: 1074px) */{
+    .wrapper {
+        max-width: 1112px;
+        display: grid;
+        grid-gap: 5px 5px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 282px 266px;
+        /*align-items: end; уменьшает малозаполненые блоки(*//*как прибить этот текст к низу блока?flex?*/
+    }
+    .review {
+        padding: 10px 10px 5px 10px;  
+    }
+    .review--violet {
+        background-position: 79% 1%;
+        grid-column-start: span 2;
+    }
+    .review--blackish-blue {
+        grid-column-start: span 2;
+        order: 5;
+    }
+    .review--tall {
+        grid-row-start: span 2;
+        order: 3;
+    }
+    .review--white {
+        order: 4;
+    }
+}
+@media screen and (min-width: 1075px) {
+    .wrapper {
+        grid-gap: 25px 30px;
+    }
+    .review {
+        padding: 24px 35px 35px 33px;
+    }
+}
+/*почему когда я хочу просмотреть мобильную версию, верх кудато исчезает, не видно его и низ тоже?*/
